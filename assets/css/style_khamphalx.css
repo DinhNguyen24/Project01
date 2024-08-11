@@ -1,0 +1,43 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.grid-item img {
+    max-width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Thay đổi con trỏ thành hình ngón tay */
+}
+
+
+.grid-item:hover img {
+    transform: scale(1.05); /* Phóng to hình ảnh khi di chuột vào */
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền overlay */
+    padding: 10px;
+    color: #fff; /* Màu chữ trắng */
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Ẩn overlay mặc định */
+}
+
+.grid-item:hover .text-overlay {
+    opacity: 1; /* Hiển thị overlay khi di chuột vào */
+}
